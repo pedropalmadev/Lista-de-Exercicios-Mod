@@ -1,0 +1,90 @@
+/******************************************************************************
+
+Pedro de Abreu Palma
+
+
+4. Crie um sistema de caixa eletrônico, utilizando menus (switch) e outros recursos,
+que realizem operações financeiras a partir de funções especificamente projetadas para t
+al. Lembre-se de que o caixa eletrônico é um programa que roda como repetição contí
+nua, até que o usuário decida encerrar as operações. Operações: Depósito, Saque e Saldo.  
+
+*******************************************************************************/
+#include <stdio.h>
+
+float saque(float saldo, float valor);
+float deposito(float saldo, float valor);
+
+
+float main(){
+    float saldo=0,valor;
+    int modo=0,senha=123;
+    
+       
+        while ( modo != 4 ){
+            printf("\n\nSaque digite 1\nDeposito digite 2\nSaldo digite 3\nSair digite 4\n\n");     /* Mensagem de Incio*/
+            scanf("%d",&modo);
+            
+            if(modo < 4){
+            printf("\nDigite sua senha: ");                                                         /* Solicita senha para processeguir com a operação caso a operação necessite*/
+            scanf("%d",&senha);
+            
+           if (senha != 123){                                                                       /* Verifica se senha é valida*/
+                printf("\nSenha incorreta \n");
+                modo = 5;
+              }}
+          
+    switch(modo){
+        
+        case(1):
+        
+          saldo = saque(saldo,valor);
+           break;
+           
+        case(2):
+           saldo = deposito(saldo,valor);
+            break;
+                
+        case(3):
+            printf("\nSaldo Atual: %.2f", saldo);
+                break;
+            
+        case(4):
+            printf("\nOperação finalizada\nObrigado!!!");
+                break; 
+            
+        default :
+        printf("\nOperação Invalida!!!");
+               break;
+       
+    }}
+    
+    return 0;
+        }
+    float saque(float saldo, float valor){
+            printf("\nDigite quanto deseja saquar: ");
+            scanf("%f",&valor);
+            
+            if ( valor <= saldo){
+            printf("\n\nOperação realizado com sucesso!!!");                                      //Saqua valor inserido            
+              return saldo - valor;                                                               //Verifica se tem saldo sulficiente  
+                }else{
+                    printf("\nSaldo insulficiante");
+                 
+              }
+           }
+    float deposito(float saldo, float valor){
+            printf("\nDigite quanto deseja depositar: ");
+            scanf("%f",&valor);
+            
+            while ( valor <= 0){                                                                    //Verifica se valor é valido
+                printf("\nValor invalido, digite novamente: ");
+                scanf("%f",&valor);
+            }
+            printf("\n\nOperação realizado com sucesso!!!");
+            return  saldo + valor;                                                                  //Deposita valor inserido
+            }
+
+
+
+
+
