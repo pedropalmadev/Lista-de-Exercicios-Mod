@@ -1,0 +1,33 @@
+/******************************************************************************
+
+Pedro de Abreu Palma
+
+5. Crie uma função que determine se dado caracter está entre ‘a’ e ‘z
+’. Dica: Use a tabela ASCII.  
+
+*******************************************************************************/
+#include <stdio.h>
+
+int caracter(char letra);
+
+int main(){
+    char letra;
+    
+    printf("Digite um caracter: ");             //Mensagem de inicio
+    scanf("%c",&letra);
+    caracter(letra);
+    
+
+}
+    int caracter(char letra){
+        if(letra >= 'a' && letra <= 'z' || letra >= 'A' && letra <= 'B' ){  //verifica caracter
+            printf("\n %c esta entre 'a' e 'z' ",letra);
+        }else{
+            printf("\n %c não esta entre 'a' e 'z' ",letra);
+        }    
+              return 0;
+           }
+   
+
+
+
