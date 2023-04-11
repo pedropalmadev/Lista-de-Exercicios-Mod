@@ -1,0 +1,29 @@
+/*
+
+Pedro de Abreu
+
+função que retorne a diferença entre dois números inteiros digitados pelo usuário.)
+
+*/
+
+#include <stdio.h>
+
+float cubo(float valor);
+
+int main(){
+    float valor;
+    
+    printf("Digite o numero que deseja elevar ao cubo: ");      //Mensagem de entrada
+    scanf("%f",&valor);
+    cubo(valor);
+    
+}
+    float cubo(float valor){                                  //Função que calcula valor ao cubo
+   
+      printf(" ao cubo é %.2f",(valor * valor)*valor);
+     return 0;
+      
+    }
+
+
+   
